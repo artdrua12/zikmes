@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <info />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <div v-if="snackbar.run" class="snackbar">{{ snackbar.text }}</div>
   </div>
@@ -7,6 +8,7 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Info from "./components/Info.vue";
 
 export default {
   name: "App",
@@ -31,6 +33,7 @@ export default {
   },
   components: {
     HelloWorld,
+    Info,
   },
 };
 </script>

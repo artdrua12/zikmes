@@ -30,6 +30,7 @@ export default {
           text: "Заполните поле 'Ваш номер'",
           run: true,
         });
+        this.$store.commit("set", { name: "searchUsers", value: 0 });
       }
     },
     check() {
@@ -55,6 +56,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
 .myInput {
   width: 70%;
   min-width: 630px;

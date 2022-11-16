@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     repositories: {},
-    message: { text: 'default', run: false }
+    message: { text: 'default', run: false },
+    searchUsers: 0,
   },
   getters: {
     get: state => type => {
@@ -30,7 +31,7 @@ export default new Vuex.Store({
         );
         const res = await response.json();
         console.log('data', res);
-        commit('set', { name: 'searchUsers', value: res });
+        commit('set', { name: 'searchUsers', value: res?.total_count });
         commit('setMessage', { text: 'Успешно отправлены и загружены данные', run: true });
       } catch (e) {
         commit('setMessage', { text: 'Ошибка запроса', run: true });
